@@ -15,6 +15,9 @@ const Navbar = () => {
       <div className="nav-content">
         <Link to="/" className="nav-logo">MyApp</Link>
         <div className="nav-links">
+        <button onClick={toggleTheme}>
+          {theme === 'light' ? 'Switch to Dark Mode' : 'Switch to Light Mode'}
+        </button>
           {links.map((path) => (
             <motion.div
               key={path}
