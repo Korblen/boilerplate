@@ -1,44 +1,63 @@
-nav {
-    background-color: #333;
-    padding: 1rem;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
-    .nav-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      max-width: 1200px;
-      margin: 0 auto;
-  
-      .nav-logo {
-        font-size: 1.5rem;
-        color: #fff;
-        text-decoration: none;
-        font-weight: bold;
-      }
-  
-      .nav-links {
-        display: flex;
-        gap: 1rem;
-  
-        div {
-          a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1rem;
-            transition: color 0.3s, transform 0.3s;
-  
-            &:hover {
-              color: #f0db4f;
-            }
-          }
-        }
-      }
-    }
+@import './variables.scss'; // Import variables if any
+
+.light-theme-navbar {
+  background-color: $light-bg-color;
+  color: $light-text-color;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme-navbar {
+  background-color: $dark-bg-color;
+  color: $dark-text-color;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $accent-color;
   }
-  
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a {
+  font-size: 1rem;
+  font-weight: 500;
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.theme-toggle-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: rotate(20deg);
+  }
+}

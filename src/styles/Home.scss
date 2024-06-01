@@ -1,29 +1,43 @@
-/* Home.scss */
+@import './variables.scss'; // Import variables if any
 
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 2rem;
-    background-color: #f8f9fa;
-    min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &.light {
+    background-color: $light-bg-color;
+    color: $light-text-color;
   }
-  
+
+  &.dark {
+    background-color: $dark-bg-color;
+    color: $dark-text-color;
+  }
+
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
-    color: #343a40;
-  }
-  
-  p {
-    font-size: 1.25rem;
     margin-bottom: 1rem;
-    color: #495057;
   }
-  
+
+  .theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.3s ease;
+    margin-bottom: 1rem;
+
+    &:hover {
+      transform: rotate(20deg);
+    }
+  }
+
   button {
-    padding: 0.75rem 1.5rem;
-    margin-bottom: 1rem;
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1.5rem;
     background-color: #007bff;
     color: #fff;
     border: none;
@@ -31,33 +45,22 @@
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.3s ease;
+
+    &:hover {
+      background-color: #0056b3;
+    }
   }
-  
-  button:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-  }
-  
-  button:active {
-    background-color: #004085;
-    transform: translateY(0);
-  }
-  
+
   a {
     display: inline-block;
-    padding: 0.5rem 1rem;
-    color: #007bff;
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: $accent-color;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: darken($accent-color, 10%);
+    }
   }
-  
-  a:hover {
-    background-color: #e9ecef;
-    color: #0056b3;
-  }
-  
-  a + a {
-    margin-left: 1rem;
-  }
-  
+}

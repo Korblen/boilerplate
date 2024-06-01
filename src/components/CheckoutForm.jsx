@@ -32,7 +32,7 @@ const CheckoutForm = () => {
       <div className="card-element">
         <CardElement />
       </div>
-      <button type="submit" disabled={!stripe}>
+      <button type="submit" class="checkout" disabled={!stripe}>
         Pay
       </button>
     </form>

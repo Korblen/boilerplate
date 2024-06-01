@@ -9,7 +9,7 @@ form {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
-  button {
+  button.checkout {
     display: block;
     width: 100%;
     padding: 1rem;
@@ -23,16 +23,16 @@ form {
     transition: background-color 0.3s ease, transform 0.3s ease;
   }
   
-  button:disabled {
+  button.checkout:disabled {
     background-color: #6c757d;
   }
   
-  button:hover:enabled {
+  button.checkout:hover:enabled {
     background-color: #0056b3;
     transform: translateY(-2px);
   }
   
-  button:active:enabled {
+  button.checkout:active:enabled {
     background-color: #004085;
     transform: translateY(0);
   }

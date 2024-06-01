@@ -1,6 +1,9 @@
 /* Footer.scss */
+@import './variables.scss'; // Import variables if any
 
-.footer {
+
+
+  .footer {
     background-color: #343a40;
     color: #ffffff;
     padding: 1rem 0;
@@ -8,27 +11,42 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-  }
   
-  .footer-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-  }
+    &.light {
+      background-color: $light-bg-color;
+      color: $light-text-color;
+    }
   
-  .social-links {
-    display: flex;
-    gap: 1rem;
-  }
+    &.dark {
+      background-color: $dark-bg-color;
+      color: $dark-text-color;
+    }
   
-  .social-links a {
-    color: #ffffff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
   
-  .social-links a:hover {
-    color: #007bff;
+    p {
+      margin: 0.5rem 0;
+    }
+  
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.5rem;
+  
+      a {
+        color: inherit;
+        text-decoration: none;
+        font-size: 1.2rem;
+        transition: color 0.3s ease;
+  
+        &:hover {
+          color: $accent-color;
+        }
+      }
+    }
   }
   

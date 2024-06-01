@@ -2,11 +2,13 @@ import React from 'react';
 import { useAtom } from 'jotai';
 import { authAtom } from '../store/authAtom';
 import { Link, useNavigate } from 'react-router-dom';
+import { useTheme } from './ThemeContext'; // Import the useTheme hook
 import '../styles/Home.scss';
 
 const Home = () => {
   const [auth, setAuth] = useAtom(authAtom);
   const navigate = useNavigate();
+  const { theme, toggleTheme } = useTheme(); // Use the theme context
 
   const handleLogout = () => {
     setAuth(null);
@@ -14,7 +16,7 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
+    <div className={`home-container ${theme}`}>
       <h1>Welcome to the Home Page</h1>
       {auth ? (
         <>
