@@ -4,6 +4,8 @@ import { motion } from 'framer-motion';
 import '../styles/navbar.scss';
 
 const Navbar = () => {
+  const links = ['/', '/login', '/signup', '/payment'];
+
   return (
     <motion.nav
       initial={{ y: -100 }}
@@ -13,7 +15,7 @@ const Navbar = () => {
       <div className="nav-content">
         <Link to="/" className="nav-logo">MyApp</Link>
         <div className="nav-links">
-          {['/', '/login', '/signup', '/payment'].map((path, index) => (
+          {links.map((path) => (
             <motion.div
               key={path}
               whileHover={{ scale: 1.1 }}
